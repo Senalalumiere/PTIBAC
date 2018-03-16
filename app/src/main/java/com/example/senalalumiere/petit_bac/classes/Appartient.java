@@ -5,33 +5,27 @@ package com.example.senalalumiere.petit_bac.classes;
  */
 
 public class Appartient {
-    private int id_joueur;
-    private int id_equipe;
+    private Joueur joueur;
+    private Equipe equipe;
 
-    public Appartient(int id, int id_equipe) {
-        this.id_joueur = id;
-        this.id_equipe = id_equipe;
+    public Appartient(){}
+
+    public Appartient(Joueur joueur, Equipe equipe) {
+        this.joueur = joueur;
+        this.equipe = equipe;
 
     }
 
     @Override
     public String toString(){
-        return (id_joueur +" - " + id_equipe);
+        return (joueur +" - " + equipe);
     }
 
-    public int getId_joueur() {
-        return id_joueur;
-    }
+    public Joueur getJoueur() {return joueur;}
 
-    public void setId_joueur(int id_joueur) {
-        this.id_joueur = id_joueur;
-    }
+    public void setJoueur(Joueur joueur) {this.joueur = joueur;}
 
-    public int getId_equipe() {
-        return id_equipe;
-    }
+    public Equipe getEquipe() {return equipe;}
 
-    public void setId_equipe(int id_equipe) {
-        this.id_equipe = id_equipe;
-    }
+    public void setEquipe(Equipe equipe) {this.equipe = equipe;}
 }
