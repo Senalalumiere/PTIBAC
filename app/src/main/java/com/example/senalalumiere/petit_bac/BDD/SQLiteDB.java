@@ -19,13 +19,13 @@ public class SQLiteDB extends SQLiteOpenHelper {
     private static final String CREATE_TABLE_JOUEUR = "CREATE TABLE JOUEUR" +
             "(" +
             "ID_JOUEUR INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," +
-            "NOM STRING NOT NULL" +
+            "NOM_JOUEUR STRING NOT NULL" +
             ");";
 
     private static final String CREATE_TABLE_EQUIPE = "CREATE TABLE EQUIPE" +
             "(" +
             "ID_EQUIPE INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," +
-            "NOM STRING NOT NULL" +
+            "NOM_EQUIPE STRING NOT NULL" +
             ");";
 
     private static final String CREATE_TABLE_APPARTIENT = "CREATE TABLE APPARTIENT" +
