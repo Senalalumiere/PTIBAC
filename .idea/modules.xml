@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Petit_Bac.iml" filepath="$PROJECT_DIR$/Petit_Bac.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PTIBAC.iml" filepath="$PROJECT_DIR$/PTIBAC.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

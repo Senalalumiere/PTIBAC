@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Petit_Bac</string>
+    <string name="app_name">GTPB</string>
+    <string name="app_name2">Gère tes P&#130;tits Bacs</string>
+    <string name="E">EQUIPE</string>
+    <string name="J">JOUEUR</string>
+    <string name="P">PARTIE</string>
 </resources>
