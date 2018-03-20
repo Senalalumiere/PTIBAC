@@ -3,5 +3,7 @@
     <string name="app_name2">Gère tes P&#130;tits Bacs</string>
     <string name="E">EQUIPE</string>
     <string name="J">JOUEUR</string>
+    <string name="LJ">VOIR LES JOUEURS</string>
+    <string name="NJ">NOUVEAU JOUEUR</string>
     <string name="P">PARTIE</string>
 </resources>
