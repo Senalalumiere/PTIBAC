@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.senalalumiere.petit_bac.classes.JoueurActivity"
+    android:id="@+id/menuplayer">
+
+    <Button
+        android:layout_width="320dp"
+        android:layout_height="100dp"
+        android:text="@string/NJ"
+        android:onClick="newPlayer"
+        android:layout_marginTop="175dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/buttonNJ" />
+
+    <Button
+        android:layout_width="320dp"
+        android:layout_height="100dp"
+        android:text="@string/LJ"
+        android:onClick="listPlayer"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="@id/buttonNJ"
+        app:layout_constraintStart_toStartOf="@id/buttonNJ"
+        app:layout_constraintTop_toBottomOf="@id/buttonNJ"
+        android:id="@+id/buttonLJ" />
+    <!-- TODO android:onClick="go to list Joueurs" -->
+
+</android.support.constraint.ConstraintLayout>

@@ -135,6 +135,18 @@ public class SQLiteDB extends SQLiteOpenHelper {
     private static final String INSERT_STATS_PHOEBE1 = "INSERT INTO PARTIE VALUES (12, 1, 73);";
     private static final String INSERT_STATS_PHOEBE2 = "INSERT INTO PARTIE VALUES (12, 2, 71);";
 
+    private static final String PRAGMADB = "PRAGMA foreign_keys = ON;";
+
+    @Override
+
+    public void onOpen(SQLiteDatabase db) {
+
+        super.onOpen(db);
+
+        db.execSQL(PRAGMADB);
+
+    }
+
     /* Constructeur */
     public SQLiteDB(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
