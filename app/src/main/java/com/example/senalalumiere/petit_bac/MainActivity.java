@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.senalalumiere.petit_bac.Activity.Joueur.JoueurActivity;
+
 public class MainActivity extends Activity {
 
     @Override
@@ -14,6 +16,6 @@ public class MainActivity extends Activity {
     }
 
     public void jActivity (View view){
-        startActivity(new Intent(this, com.example.senalalumiere.petit_bac.classes.JoueurActivity.class));
+        startActivity(new Intent(this, JoueurActivity.class));
     }
 }

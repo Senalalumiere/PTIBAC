@@ -138,7 +138,6 @@ public class SQLiteDB extends SQLiteOpenHelper {
     private static final String PRAGMADB = "PRAGMA foreign_keys = ON;";
 
     @Override
-
     public void onOpen(SQLiteDatabase db) {
 
         super.onOpen(db);

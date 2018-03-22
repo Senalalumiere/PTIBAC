@@ -1,4 +1,4 @@
-package com.example.senalalumiere.petit_bac.classes;
+package com.example.senalalumiere.petit_bac.Activity.Joueur;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.ListView;
 
 import com.example.senalalumiere.petit_bac.R;
+import com.example.senalalumiere.petit_bac.classes.Joueur;
 
 import java.util.ArrayList;
 
@@ -28,7 +29,7 @@ public class JoueurActivity extends Activity {
     }
 
     public void jActivity (View view){
-        startActivity(new Intent(this, com.example.senalalumiere.petit_bac.classes.JoueurActivity.class));
+        startActivity(new Intent(this, JoueurActivity.class));
     }
 
     public void newPlayer (View view){

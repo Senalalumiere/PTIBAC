@@ -1,4 +1,4 @@
-package com.example.senalalumiere.petit_bac.classes;
+package com.example.senalalumiere.petit_bac.Activity.Joueur;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,6 +9,7 @@ import android.widget.TableLayout;
 import android.widget.TextView;
 
 import com.example.senalalumiere.petit_bac.R;
+import com.example.senalalumiere.petit_bac.classes.Joueur;
 
 import java.util.ArrayList;
 
