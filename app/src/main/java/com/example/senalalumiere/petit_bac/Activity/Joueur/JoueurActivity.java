@@ -6,8 +6,10 @@ import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ListView;
 
+import com.example.senalalumiere.petit_bac.BDD.JoueurDAO;
 import com.example.senalalumiere.petit_bac.R;
 import com.example.senalalumiere.petit_bac.classes.Joueur;
 
@@ -45,16 +47,25 @@ public class JoueurActivity extends Activity {
     }
 
     public void endPlayer (View view){
+        EditText editxt =  (EditText) findViewById(R.id.editplayername);
+        Joueur newJ = new Joueur(editxt.getText().toString());
+        JoueurDAO joueurDAO = new JoueurDAO(this);
+        joueurDAO.insertJoueur(newJ);
+        newJ.setId_joueur(joueurDAO.getLastID());
+
         this.finish();
         jActivity(view);
     }
 
     public void listPlayer (View view){
         menuLayout.removeAllViewsInLayout();
-        makeList();
+        this.makeList();
     }
 
     public void makeList (){
+        JoueurDAO joueurDAO = new JoueurDAO(this);
+        lJoueurs = joueurDAO.getAllJoueur();
+
         if (lJoueurs != null) {
             JoueurAdapter jAdapter = new JoueurAdapter(this, lJoueurs);
             ListView lViewJoueur = (ListView) findViewById(R.id.list_player);

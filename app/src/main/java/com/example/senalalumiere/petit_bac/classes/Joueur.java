@@ -15,6 +15,9 @@ public class Joueur {
         this.nom_joueur = nom;
     }
 
+    public Joueur (String nom){
+        this.nom_joueur = nom;
+    }
 
     @Override
     public String toString(){

@@ -33,6 +33,7 @@
         android:onClick="endPlayer"
         android:text="@string/Validate"
         app:layout_constraintEnd_toEndOf="@id/editplayername"
-        app:layout_constraintTop_toBottomOf="@id/editplayername"/>
+        app:layout_constraintTop_toBottomOf="@id/editplayername"
+        android:id="@+id/buttonnewplayer"/>
     <!-- TODO : onClick ajouter methods liées à la BDD -->
 </android.support.constraint.ConstraintLayout>

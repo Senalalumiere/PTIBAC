@@ -36,6 +36,16 @@ public class JoueurDAO extends SQLiteDB {
         return createSuccessful;
     }
 
+    /*GET LAST ID*/
+    public int getLastID (){
+        SQLiteDatabase db = this.getReadableDatabase();
+        int id;
+        String query = "SELECT MAX(ID_JOUEUR) FROM JOUEUR;";
+        Cursor cursor = db.rawQuery(query,null);
+        id = cursor.getInt(0);
+        return id;
+    }
+
     /* get all Joueur */
     public ArrayList<Joueur> getAllJoueur(){
         SQLiteDatabase db = this.getReadableDatabase();
