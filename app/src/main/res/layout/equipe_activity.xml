@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.senalalumiere.petit_bac.Activity.JoueurActivity"
+    tools:context="com.example.senalalumiere.petit_bac.Activity.EquipeActivity"
     android:id="@+id/JoueurDynamic">
 
     <ImageView
@@ -21,27 +21,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/J"
+        android:text="@string/E"
         android:textSize="45sp"
         android:textColor="@color/colorPrimaryDark"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/upperhead"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp" />
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="500dp"
-        app:layout_constraintTop_toBottomOf="@id/upperhead"
-        android:fillViewport="true">
-
-        <ListView
-            android:id="@+id/listPlayer"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintTop_toBottomOf="@id/upperhead" />
-
-    </ScrollView>
-
-
 
 </android.support.constraint.ConstraintLayout>

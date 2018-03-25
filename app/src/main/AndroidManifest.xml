@@ -20,8 +20,28 @@
         </activity>
 
         <activity
-            android:name=".Activity.Joueur.JoueurActivity"
+            android:name=".Activity.JoueurActivity"
             android:label="joueur_activity"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+        </activity>
+
+        <activity
+            android:name=".Activity.EquipeActivity"
+            android:label="equipe_activity"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+        </activity>
+
+        <activity
+            android:name=".Activity.PartieActivity"
+            android:label="partie_activity"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait">
             <meta-data

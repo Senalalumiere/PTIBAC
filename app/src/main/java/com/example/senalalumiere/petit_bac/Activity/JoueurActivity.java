@@ -1,4 +1,4 @@
-package com.example.senalalumiere.petit_bac.Activity.Joueur;
+package com.example.senalalumiere.petit_bac.Activity;
 
 import android.app.Activity;
 import android.content.Intent;
