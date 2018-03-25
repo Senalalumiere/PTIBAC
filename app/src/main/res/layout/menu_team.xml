@@ -5,21 +5,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.senalalumiere.petit_bac.Activity.JoueurActivity"
-    android:id="@+id/menuplayer">
+    tools:context="com.example.senalalumiere.petit_bac.Activity.EquipeActivity"
+    android:id="@+id/menuteam">
 
     <Button
         android:layout_width="320dp"
         android:layout_height="100dp"
         android:text="@string/NJ"
-        android:onClick="newPlayer"
+        android:onClick="newTeam"
         android:layout_marginTop="175dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:id="@+id/buttonNJ" />
+        android:id="@+id/buttonNT" />
 
     <Button
         android:layout_width="320dp"
@@ -28,8 +28,9 @@
         android:onClick="listPlayer"
         android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="@id/buttonNJ"
-        app:layout_constraintStart_toStartOf="@id/buttonNJ"
-        app:layout_constraintTop_toBottomOf="@id/buttonNJ"
-        android:id="@+id/buttonLJ" />
+        app:layout_constraintStart_toStartOf="@id/buttonNT"
+        app:layout_constraintTop_toBottomOf="@id/buttonNT"
+        android:id="@+id/buttonLT" />
+
 
 </android.support.constraint.ConstraintLayout>

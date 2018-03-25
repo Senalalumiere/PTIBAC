@@ -6,9 +6,11 @@ import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.senalalumiere.petit_bac.BDD.EquipeDAO;
 import com.example.senalalumiere.petit_bac.BDD.JoueurDAO;
@@ -72,7 +74,6 @@ public class JoueurActivity extends Activity {
 
         for (int i = 0; i < lJoueurs.size(); i++){
             String nom = lJoueurs.get(i).getNom_joueur();
-            System.out.print(nom+"\n");
             listName.add(nom);
         }
 
@@ -81,5 +82,15 @@ public class JoueurActivity extends Activity {
         ListView playerList = findViewById(R.id.listPlayer);
 
         playerList.setAdapter(adapter);
+
+        playerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String playerName = ((TextView)findViewById(R.id.playerItem)).getText().toString();
+                Intent intent = new Intent("com.example.senalalumiere.petit_bac.Activity.StatsActivity");
+                intent.putExtra("message", playerName);
+                startActivity(intent);
+            }
+        });
     }
 }

@@ -20,7 +20,7 @@ public class Stats {
 
     @Override
     public String toString(){
-        return (joueur +" - " + score +" - " + partie);
+        return (joueur + " - " + score + " - " + partie);
     }
 
     public Joueur getJoueur() {return joueur;}
