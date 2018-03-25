@@ -31,7 +31,7 @@ public class SQLiteDB extends SQLiteOpenHelper {
     private static final String CREATE_TABLE_APPARTIENT = "CREATE TABLE APPARTIENT" +
             "(" +
             "ID_JOUEUR INTEGER NOT NULL PRIMARY KEY," +
-            "ID_EQUIPE INTEGER NOT NULL," +
+            "ID_EQUIPE INTEGER NOT NULL ," +
             "FOREIGN KEY (ID_JOUEUR) REFERENCES JOUEUR (ID_JOUEUR) ON DELETE CASCADE," +
             "FOREIGN KEY (ID_EQUIPE) REFERENCES EQUIPE (ID_EQUIPE) ON DELETE SET NULL" +
             ");";

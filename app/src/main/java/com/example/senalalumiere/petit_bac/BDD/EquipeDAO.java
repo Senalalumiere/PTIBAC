@@ -56,11 +56,13 @@ public class EquipeDAO extends SQLiteDB {
 
         if (cursor.moveToFirst()){
             do {
-                Equipe equipe = new Equipe();
-                equipe.setId_equipe(cursor.getInt(0));
-                equipe.setNom_equipe(cursor.getString(1));
+                if (cursor.getString(1) != "SANS_EQUIPE") {
+                    Equipe equipe = new Equipe();
+                    equipe.setId_equipe(cursor.getInt(0));
+                    equipe.setNom_equipe(cursor.getString(1));
 
-                listeEquipe.add(equipe);
+                    listeEquipe.add(equipe);
+                }
             } while(cursor.moveToNext());
         }
         db.close();
@@ -73,7 +75,7 @@ public class EquipeDAO extends SQLiteDB {
         ArrayList<Joueur> listeJoueur= new ArrayList<>();
         String query = "SELECT * " +
                 "FROM JOUEUR NATURAL JOIN APPARTIENT " +
-                "WHERE ID_EQUIPE = '1';";
+                "WHERE ID_EQUIPE = '1'OR ID_EQUIPE IS NULL;";
         Cursor cursor = db.rawQuery(query,null);
 
         if (cursor.moveToFirst()){

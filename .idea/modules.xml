@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/PTIBAC.iml" filepath="$PROJECT_DIR$/PTIBAC.iml" />
       <module fileurl="file://C:\Users\sena la lumiere\Petit_Bac\PTIBAC.iml" filepath="C:\Users\sena la lumiere\Petit_Bac\PTIBAC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Petit_Bac.iml" filepath="$PROJECT_DIR$/Petit_Bac.iml" />
       <module fileurl="file://C:\Users\Pezed\AndroidStudioProjects\PTIBAC\Petit_Bac.iml" filepath="C:\Users\Pezed\AndroidStudioProjects\PTIBAC\Petit_Bac.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
