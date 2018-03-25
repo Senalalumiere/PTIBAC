@@ -35,6 +35,17 @@ public class EquipeDAO extends SQLiteDB {
         return createSuccessful;
     }
 
+    /*GET LAST ID*/
+    public int getLastID (){
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT MAX(ID_EQUIPE) FROM EQUIPE;";
+        Cursor cursor = db.rawQuery(query,null);
+        if (cursor != null) cursor.moveToFirst();
+        db.close();
+
+        return cursor.getInt(0);
+    }
+
     /* get all Equipe */
     public ArrayList<Equipe> getAllEquipe(){
         SQLiteDatabase db = this.getReadableDatabase();

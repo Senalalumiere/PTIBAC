@@ -31,19 +31,20 @@ public class JoueurDAO extends SQLiteDB {
 
         SQLiteDatabase db = this.getWritableDatabase();
 
-        boolean createSuccessful = db.insert(TABLE_JOUEUR,null,values) > 0;
+        boolean insertSuccessful = db.insert(TABLE_JOUEUR,null,values) > 0;
 
-        return createSuccessful;
+        return insertSuccessful;
     }
 
     /*GET LAST ID*/
     public int getLastID (){
         SQLiteDatabase db = this.getReadableDatabase();
-        int id;
         String query = "SELECT MAX(ID_JOUEUR) FROM JOUEUR;";
         Cursor cursor = db.rawQuery(query,null);
-        id = cursor.getInt(0);
-        return id;
+        if (cursor != null) cursor.moveToFirst();
+        db.close();
+
+        return cursor.getInt(0);
     }
 
     /* get all Joueur */

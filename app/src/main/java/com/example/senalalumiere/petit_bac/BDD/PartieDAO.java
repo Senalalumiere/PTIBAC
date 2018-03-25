@@ -38,6 +38,17 @@ public class PartieDAO extends SQLiteDB {
         return createSuccessful;
     }
 
+    /*GET LAST ID*/
+    public int getLastID (){
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT MAX(ID_PARTIE) FROM PARTIE;";
+        Cursor cursor = db.rawQuery(query,null);
+        if (cursor != null) cursor.moveToFirst();
+        db.close();
+
+        return cursor.getInt(0);
+    }
+
     /* RETRIEVE PARTIE */
     public Partie retrievePartie(int id_partie, Context context){
         SQLiteDatabase db = this.getReadableDatabase();

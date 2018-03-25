@@ -48,11 +48,9 @@ public class JoueurActivity extends Activity {
 
     public void endPlayer (View view){
         EditText editxt =  (EditText) findViewById(R.id.editplayername);
-        Joueur newJ = new Joueur(editxt.getText().toString());
         JoueurDAO joueurDAO = new JoueurDAO(this);
+        Joueur newJ = new Joueur(joueurDAO.getLastID()+1, editxt.getText().toString());
         joueurDAO.insertJoueur(newJ);
-        newJ.setId_joueur(joueurDAO.getLastID());
-
         this.finish();
         jActivity(view);
     }

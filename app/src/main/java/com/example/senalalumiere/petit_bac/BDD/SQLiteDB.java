@@ -228,6 +228,7 @@ public class SQLiteDB extends SQLiteOpenHelper {
 
         db.execSQL(INSERT_STATS_PHOEBE1);
         db.execSQL(INSERT_STATS_PHOEBE2);
+        System.out.println("BDD créer");
     }
 
 
