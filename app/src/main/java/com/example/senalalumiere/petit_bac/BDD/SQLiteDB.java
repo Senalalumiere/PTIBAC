@@ -30,9 +30,8 @@ public class SQLiteDB extends SQLiteOpenHelper {
 
     private static final String CREATE_TABLE_APPARTIENT = "CREATE TABLE APPARTIENT" +
             "(" +
-            "ID_JOUEUR INTEGER NOT NULL," +
+            "ID_JOUEUR INTEGER NOT NULL PRIMARY KEY," +
             "ID_EQUIPE INTEGER NOT NULL," +
-            "PRIMARY KEY (ID_JOUEUR, ID_EQUIPE)," +
             "FOREIGN KEY (ID_JOUEUR) REFERENCES JOUEUR (ID_JOUEUR) ON DELETE CASCADE," +
             "FOREIGN KEY (ID_EQUIPE) REFERENCES EQUIPE (ID_EQUIPE) ON DELETE SET NULL" +
             ");";
@@ -76,27 +75,29 @@ public class SQLiteDB extends SQLiteOpenHelper {
 
 
     // EQUIPE
+    private static final String INSERT_NULL = "INSERT INTO EQUIPE (NOM_EQUIPE) VALUES ('SANS_EQUIPE');";
     private static final String INSERT_SCRUBS = "INSERT INTO EQUIPE (NOM_EQUIPE) VALUES ('SCRUBS');";
     private static final String INSERT_FRIENDS = "INSERT INTO EQUIPE (NOM_EQUIPE) VALUES ('FRIENDS');";
 
-    // APPARTIENT
-    private static final String INSERT_JOHN_APP = "INSERT INTO APPARTIENT VALUES (1, 1);";
-    private static final String INSERT_ELLIOT_APP = "INSERT INTO APPARTIENT VALUES (2, 1);";
-    private static final String INSERT_CHRISTOPHER_APP = "INSERT INTO APPARTIENT VALUES (3, 1);";
-    private static final String INSERT_CARLA_APP = "INSERT INTO APPARTIENT VALUES (4, 1);";
-    private static final String INSERT_PERRY_APP = "INSERT INTO APPARTIENT VALUES (5, 1);";
-    private static final String INSERT_JORDAN_APP = "INSERT INTO APPARTIENT VALUES (6, 1);";
 
-    private static final String INSERT_ROSS_APP = "INSERT INTO APPARTIENT VALUES (7, 2);";
-    private static final String INSERT_RACHEL_APP = "INSERT INTO APPARTIENT VALUES (8, 2);";
-    private static final String INSERT_CHANDLER_APP = "INSERT INTO APPARTIENT VALUES (9, 2);";
-    private static final String INSERT_MONICA_APP = "INSERT INTO APPARTIENT VALUES (10, 2);";
-    private static final String INSERT_JOEY_APP = "INSERT INTO APPARTIENT VALUES (11, 2);";
-    private static final String INSERT_PHOEBE_APP = "INSERT INTO APPARTIENT VALUES (12, 2);";
+    // APPARTIENT
+    private static final String INSERT_JOHN_APP = "INSERT INTO APPARTIENT VALUES (1, 2);";
+    private static final String INSERT_ELLIOT_APP = "INSERT INTO APPARTIENT VALUES (2, 2);";
+    private static final String INSERT_CHRISTOPHER_APP = "INSERT INTO APPARTIENT VALUES (3, 2);";
+    private static final String INSERT_CARLA_APP = "INSERT INTO APPARTIENT VALUES (4, 2);";
+    private static final String INSERT_PERRY_APP = "INSERT INTO APPARTIENT VALUES (5, 2);";
+    private static final String INSERT_JORDAN_APP = "INSERT INTO APPARTIENT VALUES (6, 2);";
+
+    private static final String INSERT_ROSS_APP = "INSERT INTO APPARTIENT VALUES (7, 3);";
+    private static final String INSERT_RACHEL_APP = "INSERT INTO APPARTIENT VALUES (8, 3);";
+    private static final String INSERT_CHANDLER_APP = "INSERT INTO APPARTIENT VALUES (9, 3);";
+    private static final String INSERT_MONICA_APP = "INSERT INTO APPARTIENT VALUES (10, 3);";
+    private static final String INSERT_JOEY_APP = "INSERT INTO APPARTIENT VALUES (11, 3);";
+    private static final String INSERT_PHOEBE_APP = "INSERT INTO APPARTIENT VALUES (12, 3);";
 
     // Partie
-    private static final String INSERT_PARTIE1 = "INSERT INTO PARTIE (ID_EQUIPE1, ID_EQUIPE2) VALUES (1, 2);";
-    private static final String INSERT_PARTIE2 = "INSERT INTO PARTIE (ID_EQUIPE1, ID_EQUIPE2) VALUES (2, 1);";
+    private static final String INSERT_PARTIE1 = "INSERT INTO PARTIE (ID_EQUIPE1, ID_EQUIPE2) VALUES (2, 3);";
+    private static final String INSERT_PARTIE2 = "INSERT INTO PARTIE (ID_EQUIPE1, ID_EQUIPE2) VALUES (3, 2);";
 
     // STATS
     private static final String INSERT_STATS_JOHN1 = "INSERT INTO STATS VALUES (1, 1, 80);";
@@ -173,6 +174,7 @@ public class SQLiteDB extends SQLiteOpenHelper {
         db.execSQL(INSERT_JOEY);
         db.execSQL(INSERT_PHOEBE);
 
+        db.execSQL(INSERT_NULL);
         db.execSQL(INSERT_SCRUBS);
         db.execSQL(INSERT_FRIENDS);
 

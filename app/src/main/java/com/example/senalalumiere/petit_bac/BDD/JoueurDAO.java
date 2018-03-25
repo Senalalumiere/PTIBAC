@@ -24,6 +24,8 @@ public class JoueurDAO extends SQLiteDB {
         super(context);
     }
 
+
+    /* INSERT JOUEUR */
     public boolean insertJoueur(Joueur joueur){
         ContentValues values = new ContentValues();
 
@@ -33,6 +35,11 @@ public class JoueurDAO extends SQLiteDB {
 
         boolean insertSuccessful = db.insert(TABLE_JOUEUR,null,values) > 0;
 
+        /* on insert egalement son appartenance a aucune equipe */
+        ContentValues values2 = new ContentValues();
+        values2.put(ID_JOUEUR,joueur.getId_joueur());
+        values2.put("ID_EQUIPE",1);
+        db.insert("APPARTIENT",null,values2);
         return insertSuccessful;
     }
 

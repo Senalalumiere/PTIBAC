@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.senalalumiere.petit_bac.classes.Equipe;
+import com.example.senalalumiere.petit_bac.classes.Joueur;
 
 import java.util.ArrayList;
 
@@ -66,6 +67,28 @@ public class EquipeDAO extends SQLiteDB {
         return listeEquipe;
     }
 
+    /* get all Joueur sans Equipe */
+    public ArrayList<Joueur> getAllSansEquipe(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        ArrayList<Joueur> listeJoueur= new ArrayList<>();
+        String query = "SELECT * " +
+                "FROM JOUEUR NATURAL JOIN APPARTIENT " +
+                "WHERE ID_EQUIPE = '1';";
+        Cursor cursor = db.rawQuery(query,null);
+
+        if (cursor.moveToFirst()){
+            do {
+                Joueur joueur = new Joueur();
+                joueur.setId_joueur(cursor.getInt(0));
+                joueur.setNom_joueur(cursor.getString(1));
+
+                listeJoueur.add(joueur);
+            } while(cursor.moveToNext());
+        }
+        db.close();
+        return listeJoueur;
+    }
+
     /* retrieveEquipe */
     public Equipe retrieveEquipe(int id_equipe){
 
@@ -85,7 +108,7 @@ public class EquipeDAO extends SQLiteDB {
         return equipe;
     }
 
-    public void updateJoueur(Equipe equipe){
+    public void updateEquipe(Equipe equipe){
 
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -94,7 +117,7 @@ public class EquipeDAO extends SQLiteDB {
         db.close();
     }
 
-    public  void deleteJoueur(Context context, int id_equipe) {
+    public  void deleteEquipe(Context context, int id_equipe) {
 
         SQLiteDatabase db = this.getWritableDatabase();
 
