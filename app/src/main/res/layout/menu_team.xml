@@ -11,7 +11,7 @@
     <Button
         android:layout_width="320dp"
         android:layout_height="100dp"
-        android:text="@string/NJ"
+        android:text="@string/NT"
         android:onClick="newTeam"
         android:layout_marginTop="175dp"
         android:layout_marginStart="30dp"
@@ -24,7 +24,7 @@
     <Button
         android:layout_width="320dp"
         android:layout_height="100dp"
-        android:text="@string/LJ"
+        android:text="@string/LT"
         android:onClick="listPlayer"
         android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="@id/buttonNJ"

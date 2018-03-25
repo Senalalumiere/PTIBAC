@@ -4,6 +4,8 @@
     <string name="E">EQUIPE</string>
     <string name="J">JOUEUR</string>
     <string name="LJ">VOIR LES JOUEURS</string>
+    <string name="LT">VOIR LES EQUIPES</string>
+    <string name="NT">NOUVELLE EQUIPE</string>
     <string name="NJ">NOUVEAU JOUEUR</string>
     <string name="P">PARTIE</string>
     <string name="S">STATS</string>
