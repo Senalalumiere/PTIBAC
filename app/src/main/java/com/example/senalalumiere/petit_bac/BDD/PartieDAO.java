@@ -128,10 +128,8 @@ public class PartieDAO extends SQLiteDB {
     }
 
     /* GET SCORE TOTAL DE L EQUIPE DANS UNE PARTIE */
-    public Integer getScorePartie(Context context, int id_equipe, int id_partie){
+    public Integer getScorePartie(int id_equipe, int id_partie){
         SQLiteDatabase db = this.getReadableDatabase();
-        EquipeDAO equipeDAO1 = new EquipeDAO(context);
-        EquipeDAO equipeDAO2 = new EquipeDAO(context);
         Integer total = 0;
 
 

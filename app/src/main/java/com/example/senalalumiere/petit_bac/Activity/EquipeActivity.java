@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.senalalumiere.petit_bac.R;
+import com.example.senalalumiere.petit_bac.classes.Equipe;
+import com.example.senalalumiere.petit_bac.classes.Partie;
 
 /**
  * Created by Pezed on 25/03/2018.
