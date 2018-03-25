@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import com.example.senalalumiere.petit_bac.BDD.EquipeDAO;
 import com.example.senalalumiere.petit_bac.BDD.JoueurDAO;
 import com.example.senalalumiere.petit_bac.R;
 import com.example.senalalumiere.petit_bac.classes.Joueur;
