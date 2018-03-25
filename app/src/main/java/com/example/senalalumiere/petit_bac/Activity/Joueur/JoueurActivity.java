@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 
@@ -20,6 +21,8 @@ public class JoueurActivity extends Activity {
     ConstraintLayout menuLayout;
     LayoutInflater inflater;
     ArrayList <Joueur> lJoueurs;
+    ArrayList <String> listName;
+    ArrayAdapter <String> adapter;
 
 
     @Override
@@ -57,17 +60,25 @@ public class JoueurActivity extends Activity {
 
     public void listPlayer (View view){
         menuLayout.removeAllViewsInLayout();
-        this.makeList();
+        this.populateList();
     }
 
-    public void makeList (){
-        JoueurDAO joueurDAO = new JoueurDAO(this);
-        lJoueurs = joueurDAO.getAllJoueur();
 
-        if (lJoueurs != null) {
-            JoueurAdapter jAdapter = new JoueurAdapter(this, lJoueurs);
-            ListView lViewJoueur = (ListView) findViewById(R.id.list_player);
-            lViewJoueur.setAdapter(jAdapter);
+    public void populateList () {
+        JoueurDAO joueurDAO = new JoueurDAO (this);
+        lJoueurs = joueurDAO.getAllJoueur();
+        listName = new ArrayList<>();
+
+        for (int i = 0; i < lJoueurs.size(); i++){
+            String nom = lJoueurs.get(i).getNom_joueur();
+            System.out.print(nom+"\n");
+            listName.add(nom);
         }
+
+        adapter = new ArrayAdapter<>(this, R.layout.player_item, R.id.playerItem, listName);
+
+        ListView playerList = findViewById(R.id.listPlayer);
+
+        playerList.setAdapter(adapter);
     }
 }
