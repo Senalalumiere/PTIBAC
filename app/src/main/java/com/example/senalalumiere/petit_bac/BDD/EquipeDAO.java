@@ -123,7 +123,7 @@ public class EquipeDAO extends SQLiteDB {
 
         SQLiteDatabase db = this.getWritableDatabase();
 
-        // Supprimer l/equipe
+        // Supprimer l'equipe
         db.delete(TABLE_EQUIPE, ID_EQUIPE + "=" + id_equipe, null);
         System.out.println("Equipe Id : " + id_equipe + " supprimé");
 

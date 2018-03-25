@@ -11,7 +11,7 @@ public class Stats {
 
     public Stats(){}
 
-    public Stats(Joueur id_joueur, Partie id_partie, int score ){
+    public Stats(Joueur joueur, Partie partie, int score ){
         this.joueur = joueur;
         this.partie = partie;
         this.score = score;

@@ -117,6 +117,24 @@ public class JoueurDAO extends SQLiteDB {
         return joueur;
     }
 
+    /* retrieveJoueur */
+    public Joueur retrieveJoueur(String nom_joueur){
+
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        /* Requete */
+        Cursor cursor = db.query(TABLE_JOUEUR, // Nom table
+                new String[] { ID_JOUEUR, NOM_JOUEUR}, // Liste des colonnes
+                NOM_JOUEUR + "=?",  // Colonne cible du WHERE
+                new String[] { nom_joueur }, // Valeure cible du WHERE
+                null, null, null, null); // Options
+        if (cursor != null) cursor.moveToFirst();
+
+        /* On récupère chaque élément dans l'ordre de la table (Haut en bas) */
+        Joueur joueur = new Joueur(cursor.getInt(0),cursor.getString(1));
+        db.close();
+        return joueur;
+    }
 
     public void updateJoueur(Joueur joueur){
 

@@ -68,31 +68,31 @@ public class StatsDAO extends SQLiteDB {
     }
 
     /* GET ALL STATS D UN JOUEUR */
-    public ArrayList<Stats> getAllStats(Context context, int id_joueur){
-        SQLiteDatabase db = this.getReadableDatabase();
-        JoueurDAO joueurDAO = new JoueurDAO(context);
-        PartieDAO partieDAO = new PartieDAO(context);
+    public ArrayList<Stats> getAllStatsJoueur(Context context, int id_joueur){
+    SQLiteDatabase db = this.getReadableDatabase();
+    JoueurDAO joueurDAO = new JoueurDAO(context);
+    PartieDAO partieDAO = new PartieDAO(context);
 
-        ArrayList<Stats> listeStats = new ArrayList<>();
-        String query = "SELECT * FROM STATS WHERE ID_JOUEUR = " + id_joueur +";";
-        Cursor cursor = db.rawQuery(query,null);
+    ArrayList<Stats> listeStats = new ArrayList<>();
+    String query = "SELECT * FROM STATS WHERE ID_JOUEUR = " + id_joueur +";";
+    Cursor cursor = db.rawQuery(query,null);
 
         if (cursor.moveToFirst()){
-            do {
-                Stats stats = new Stats();
-                Joueur joueur = joueurDAO.retrieveJoueur(cursor.getInt(0));
-                Partie partie = partieDAO.retrievePartie(cursor.getInt(1), context);
+        do {
+            Stats stats = new Stats();
+            Joueur joueur = joueurDAO.retrieveJoueur(cursor.getInt(0));
+            Partie partie = partieDAO.retrievePartie(cursor.getInt(1), context);
 
-                stats.setJoueur(joueur);
-                stats.setPartie(partie);
-                stats.setScore(cursor.getInt(2));
+            stats.setJoueur(joueur);
+            stats.setPartie(partie);
+            stats.setScore(cursor.getInt(2));
 
-                listeStats.add(stats);
-            } while(cursor.moveToNext());
-        }
+            listeStats.add(stats);
+        } while(cursor.moveToNext());
+    }
         db.close();
         return listeStats;
-    }
+}
 
 
     /* UPDATE */
